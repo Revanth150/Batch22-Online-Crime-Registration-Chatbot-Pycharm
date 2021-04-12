@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+
+
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: grey;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.active {
+  background-color: grey;
+}
+
+.cen{
+text-align: center;
+}
+
+----
+<!--Contact-->
+body {font-family: Arial, Helvetica, sans-serif; }
+* {box-sizing: border-box;}
+
+input[type=text],input[type=email], input[type=password], select, textarea {
+  width: 90%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  font-size: 15px;
+}
+
+
+input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px 50px;
+  border: none;
+  font-size: 15px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: grey;
+}
+
+
+.container {
+  border-radius: 50px;
+  width: 35%;
+  margin-left :425px;
+  background-image: linear-gradient(#DCDCDC, white);;
+  padding: 2px;
+}
+</style>
+
+</head>
+<body>
+
+<ul>
+
+    <li style="float:right"><a href="/signup" class="active">Sign Up</a></li>
+    <li style="float:right"><a href="/">Login</a></li>
+
+  </li>
+
+
+
+
+</ul>
+<div class="cen">
+<h1>Sign Up Page</h1>
+</div>
+
+<div class="container">
+<div class="cen">
+<div>
+    <form method="post">
+        <h2>
+        <label>Name</label><br>
+        </h2>
+        <input type="text" name="one" id="name" placeholder="username"><br>
+        <h2>
+        <label>Email</label><br>
+        </h2>
+        <input type="email" name="two" id="username" placeholder="email"><br>
+
+        <!--
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your Last name..">
+        -->
+        <h2>
+        <label>Password</label><br>
+        </h2>
+        <input type="password" name="three" id="password" placeholder="********"><br><br>
+        <input type="Submit" value="Sign In">
+    </form>
+</div>
+</div>
+</div>
+
+</body>
+</html>

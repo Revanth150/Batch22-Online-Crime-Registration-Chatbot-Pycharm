@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  font-size: 25px;
+  padding: 20px 30px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: grey;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.active {
+  background-color: grey;
+}
+
+.cen{
+text-align: center;
+}
+
+
+#---------------------------------------------------------------------
+    body {
+  font: 15px arial, sans-serif;
+  background-color: #d9d9d9;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+#bodybox {
+  margin: auto;
+  max-width: 300px;
+  font: 15px arial, sans-serif;
+  background-image: linear-gradient(white, #333);
+  color: white;
+  border-style: solid;
+  border-width: 0px;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  padding-right: 2px;
+  padding-left: 2px;
+  margin-left :975px;
+  border-radius: 0px;
+}
+
+#chatboarder {
+  border-style: solid;
+  background-image: url("https://img.freepik.com/free-vector/gray-white-gradient-abstract-background_53876-60238.jpg?size=338&ext=jpg" );
+  border-width: 0px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  margin-left: 0px;
+  color: black;
+  margin-right: 0px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+  padding-right: 75px;
+  padding-left: 10px;
+  border-radius: 0px;
+
+}
+
+.chatlog {
+   font: 15px arial, sans-serif;
+}
+
+#chatbox {
+  font: 15px arial, sans-serif;
+  height: 22px;
+  width: 100%;
+}
+
+h1 {
+  margin: auto;
+}
+
+pre {
+  background-color: #f0f0f0;
+  margin-left: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+.fixed-bg {
+  background-image: url("https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixid=MXwxMjA3fDB8MHxzZWFyY2h8Mzh8fGJpbmFyeSUyMGNvZGV8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60");
+  min-height: 500px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+</style>
+</head>
+<body>
+<ul>
+    <li ><a href="/home">Home</a></li>
+    <li ><a href="/contact">Issue</a></li>
+    <li ><a href="/bot" class="active">Bot</a></li>
+    <li ><a href="/about">About</a></li>
+    <li ><a href="/contactus">Contact Us</a></li>
+    <li style="float:right"><a href="/" >LogOut</a></li>
+
+</ul>
+<div class="fixed-bg">
+
+
+
+<br>
+<br>
+    <br>
+<div id='bodybox' >
+
+  <div id='chatboarder'>
+    <p id="chatlog7" class="chatlog">&nbsp;</p>
+    <p id="chatlog6" class="chatlog">&nbsp;</p>
+    <p id="chatlog5" class="chatlog">&nbsp;</p>
+    <p id="chatlog4" class="chatlog">&nbsp;</p>
+    <p id="chatlog3" class="chatlog">&nbsp;</p>
+    <p id="chatlog2" class="chatlog">&nbsp;</p>
+    <p id="chatlog1" class="chatlog">&nbsp;</p>
+      <div class="cen">
+    <input type="text" name="chat" id="chatbox" placeholder="Message Here">
+      </div>
+  </div>
+    <div class="cen">
+        <h2>Message Bot</h2>
+    </div>
+
+</div>
+
+
+</div>
+<script>
+
+
+
+
+
+
+
+    var messages = [], //array that hold the record of each string in chat
+  lastUserMessage = "", //keeps track of the most recent input string from the user
+  botMessage = "", //var keeps track of what the chatbot is going to say
+  botName = 'Chatbot' //name of the chatbot
+  User = 'User'
+
+//edit this function to change what the chatbot says
+function chatbotResponse() {
+  botMessage = "Enter Your Issue "; //the default message
+
+  if (lastUserMessage === 'hi' || lastUserMessage === 'hey' || lastUserMessage === 'hello' || lastUserMessage === 'HI' || lastUserMessage === 'HELLO' || lastUserMessage === 'HEY' || lastUserMessage === 'Hi' || lastUserMessage === 'Hey' || lastUserMessage === 'Hello' ) {
+    botMessage = 'Hey! How can I help you?';
+  }
+
+   if (lastUserMessage === 'name') {
+    botMessage = 'My name is ' + botName;
+  }
+
+  if (lastUserMessage === 'crime') {
+    botMessage = 'Which Type of Attack';
+  }
+
+  if (lastUserMessage === 'Crime') {
+    botMessage = 'Which Type of Attack';
+  }
+
+   if (lastUserMessage === 'CRIME') {
+    botMessage = 'Which Type of Attack';
+  }
+
+  if (lastUserMessage === 'Cyber Crime') {
+    botMessage = 'Which Type of Attack';
+  }
+
+  if (lastUserMessage === 'cyber crime') {
+    botMessage = 'Which Type of Attack';
+  }
+
+   if (lastUserMessage === 'CYBER CRIME') {
+    botMessage = 'Which Type of Attack';
+  }
+
+  if (lastUserMessage === 'DDoS') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'DDOS') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'ddos') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'DDoS Attack') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'ddos attack') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'attack') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'Attack') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'ATTACK') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'Botnets') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'BOTNETS') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'botnets') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'Phishing') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'phishing') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'PHISHING') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+    if (lastUserMessage === 'Scams') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'scams') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'SCAMS') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+    if (lastUserMessage === 'Cyberstalking') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'cyberstalking') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+  if (lastUserMessage === 'CYBERSTALKING') {
+    botMessage = 'Sorry To hear that, Click the Issue Button to Register the complaint , Our IT department will get on it as soon as possible.';
+  }
+
+
+
+
+}
+
+//
+//this runs each time enter is pressed.
+//It controls the overall input and output
+function newEntry() {
+  //if the message from the user isn't empty then run
+  if (document.getElementById("chatbox").value != "") {
+    //pulls the value from the chatbox ands sets it to lastUserMessage
+    lastUserMessage = document.getElementById("chatbox").value;
+    //sets the chat box to be clear
+    document.getElementById("chatbox").value = "";
+    //adds the value of the chatbox to the message array
+    messages.push("<b>" +User+ ":</b> "  + lastUserMessage);
+    //takes the return value from chatbotResponse() and outputs it
+    chatbotResponse()
+      //add the chatbot's name and message to the array messages
+    messages.push("<b>" + botName + ":</b> " + botMessage )
+      // says the message using the text to speech function written below
+    Speech(botMessage);
+    //outputs the last few messages to html
+    for (var i = 1; i < 8; i++) {
+      if (messages[messages.length - i])
+        document.getElementById("chatlog" + i).innerHTML = messages[messages.length - i];
+    }
+  }
+}
+
+//text to Speech
+//https://developers.google.com/web/updates/2014/01/Web-apps-that-talk-Introduction-to-the-Speech-Synthesis-API
+function Speech(say) {
+  if ('speechSynthesis' in window) {
+    var utterance = new SpeechSynthesisUtterance(say);
+    //utterance.volume = 1; // 0 to 1
+    //utterance.rate = 1; // 0.1 to 10
+    //utterance.pitch = 1; //0 to 2
+    //utterance.text = 'Hello World';
+    //utterance.lang = 'en-US';
+    speechSynthesis.speak(utterance);
+  }
+}
+
+//runs the keypress() function when a key is pressed
+document.onkeypress = keyPress;
+//if the key pressed is 'enter' runs the function newEntry()
+function keyPress(e) {
+  var x = e || window.event;
+  var key = (x.keyCode || x.which);
+  if (key == 13 || key == 3) {
+    //runs this function when enter is pressed
+    newEntry();
+  }
+}
+</script>
+</body>
+</html>
